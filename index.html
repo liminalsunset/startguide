@@ -17,7 +17,6 @@
         <body>
             <section>
                 <h1>django startguide</h1>
-                <div>
                     <p>
                         This guide assumes you've already installed python3. I am still teaching myself so this what has been working for me--it might not work for you. But I couldn't find steps in one place that covered starting a django project, venv, git, and making sure you weren't sharing your secret key all in one place. :)
                     </p>
@@ -42,9 +41,9 @@
                     <p>Windows and Linux users, this is a wonderfully concise walkthrough for venv steps in your OS of choice:
                     </p>
                     <a href="https://www.geeksforgeeks.org/creating-python-virtual-environment-windows-linux/">Creating Python Virtual Environment in Windows and Linux</a>
+                    <p>** Optional: You may wish to open things in VSCode at this point and resume in the terminal there, otherwise when you code . at a later step you'll have to reactivate the venv in there, which is a simple matter of navigating to the root folder and activating ala step 3 and then cding back into your project folder so it doesn't really matter :)</p>
                     </li>
-
-                <p>** Optional: You may wish to open things in VSCode at this point and resume in the terminal there, otherwise when you code . at a later step you'll have to reactivate the venv in there, which is a simple matter of navigating to the root folder and activating ala step 3 and then cding back into your project folder so it doesn't really matter :)</p>
+                
                     <li>In the terminal (at root directory for project, where your venv is located):
                         <p>source env_name/bin/activate</p>
                     </li>
@@ -79,7 +78,7 @@
                     </p>
                     </li>
                     <li>cd into your project</li>
-                    <li>It is here I would type code . into the terminal to open your project in VSCode if you haven't already. Once you've opened your project in VSCode, navigate to the terminal and cd .. up to your root directory, activate your venv (see step #3).</li>
+                    <li>It is here I would type code . into the terminal to open your project in VSCode if you haven't already. Once you've opened your project in VSCode, navigate to the terminal and cd .. up to your root directory, activate your venv (see step #3) and cd back into your project.</li>
                     <li>Start the local web server:
                     <p>
                         python3 manage.py runserver (mac)
@@ -87,7 +86,6 @@
                         python manage.py runserver (windows)
                     </p>
                     You'll see that there are unapplied migrations, we'll get to that.
-                    </li>
                     <p>** There is a caveat here that I have heard you want to make your User changes before you apply migrations and migrate or you'll have to go back and restart later, so if you plan on having a custom User model you might want to pause here and look into this.
                     </p>
                     <p>
@@ -96,6 +94,7 @@
                     <a href="https://testdriven.io/blog/django-custom-user-model/">https://testdriven.io/blog/django-custom-user-model/</a>
                     </div>
                     <p>If this doesn't apply to you or you don't know what I'm talking about you probably don't need to worry about it at this point, in which case you can:</p>
+                    </li>
                     <li>Migrate :)
                         <p>
                             python3 manage.py migrate (mac)
@@ -141,8 +140,8 @@
                             <br>
                             pip3 install python-decouple
                         </p>
+                        (there's at minimum a possible linting error in VSCode at the moment, I have heard there are fixes like it could be an interpreter issue, or you could try uninstalling decouple--not python-decouple--installing python-decouple outside of venv, restarting the terminal--if anyone experiences this and has a fix let me know)
                     </li>
-                    <p>(there's at minimum a possible linting error in VSCode at the moment, I have heard there are fixes like it could be an interpreter issue, or you could try uninstalling decouple--not python-decouple--installing python-decouple outside of venv, restarting the terminal--if anyone experiences this and has a fix let me know)</p>
                     <li>Next, in terminal:
                         <p>pip3 freeze > requirements.txt</p>
                         (I would google this further if you're curious, but basically it keeps track of your dependencies)
@@ -154,20 +153,20 @@
                     <li>git branch -M main</li>
                     <li>git remove add origin .. (paste your git remote origin address)</li>
                     <li>git push -u origin main</li>
-                    <p>That's basically it. I'll try to refine, improve and update this as things come up. I'll also add interesting links as I find them to the bottom of this.</p>
-                    <li>From here you can even start your first app in django:
-                        <p>
-                            python3 manage.py startapp name_of_app
-                        </p>
-                    </li>
+                    </ol>
+                    </section>
+                <p>That's basically it. I'll try to refine, improve and update this as things come up. I'll also add interesting links as I find them to the bottom of this.</p>
+                <p>From here you can even start your first app in django:</p>
+                <section>
+                <ol>
+                    <li>python3 manage.py startapp name_of_app
+
                     <li>Go to settings/py in your project directory and add your app to the list of INSTALLED_APPS.</li>
                 </ol>
+                </section>
                 <p>Happy coding! :)</p>
-            </section>
-
-            <section>
-                <p>Contact.</p>
-                </div>
-            </section>
+                <a href="#">Back to top.</a>
+                <a href="https://github.com/liminalsunset">My Github</a>
+                <a href="mailto:dev.yoga@pm.me">Contact</a>
         </body>
-    </html> 
+    </html>
