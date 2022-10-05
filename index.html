@@ -21,23 +21,151 @@
                     <p>
                         This guide assumes you've already installed python3. I am still teaching myself so this what has been working for me--it might not work for you. But I couldn't find steps in one place that covered starting a django project, venv, git, and making sure you weren't sharing your secret key all in one place. :)
                     </p>
+                    <p>
+                        In this most recent iteration I have tried to include the windows variations for getting started, but I have only checked this on macOS so YMMV.
+                    </p>
+                    <p>
+                        Let's get started:
+                    </p>
+
+
                 <ol>
-                    <li>A thing.
+                    <li>Check your Python version (you need at least 3.8 to use Django 4):
                     </br>
-                        <p>some stuff about that thing</p>
+                        <p>python3 --version (mac) <br>
+                           python --version (windows)</p>
                     </li>
-                    <li>Another thing.
+                    <li>Make and/or cd into/navigate to a directory for the project</li>
+                    <li>Set up a virtual environment for your project in this directory (at root):
                     </br>
-                        <p>some stuff about that thing</p>
+                    <p>python3 -m venv env_name</p>
+                    <p>Windows and Linux users, this is a wonderfully concise walkthrough for venv steps in your OS of choice:
+                    </p>
+                    <a href="https://www.geeksforgeeks.org/creating-python-virtual-environment-windows-linux/">Creating Python Virtual Environment in Windows and Linux</a>
                     </li>
-                    <li>Yet another.
-                    </br>
-                    <p>some stuff about that thing</p>
+
+                <p>** Optional: You may wish to open things in VSCode at this point and resume in the terminal there, otherwise when you code . at a later step you'll have to reactivate the venv in there, which is a simple matter of navigating to the root folder and activating ala step 3 and then cding back into your project folder so it doesn't really matter :)</p>
+                    <li>In the terminal (at root directory for project, where your venv is located):
+                        <p>source env_name/bin/activate</p>
                     </li>
+                    <li>After you've created and activated your virtual environment for your project you should see something like:
+                        <p>
+                        (my_env) -> project_directory_name:
+                        </p>
+                    </li>
+                    <li>Here you can check if you have pip installed by typing pip3 on mac or pip on windows--if it's installed this should display a list of commands.</li>
+                    <li>Let's install Django:
+                        <p>
+                            python3 -m pip install Django // not super specific
+                            <br>
+                            pip3 install Django==4.0 // to be more precise
+                            <br>
+                            (or pip install Django==4.0 on windows)
+                        </p>
+                    </li>
+                    <li>In terminal run:
+                    <p>
+                        python3 -m django (mac)
+                        <br>
+                        python -m django (windows)
+                    </p>
+                        to check install. This should display a list of Django commands in the terminal.
+                    </li>
+                    <li>Start your Django project:
+                    <p>
+                        python3 -m django-admin startproject project_name (mac)
+                        <br>
+                        python -m django startproject project_name (windows)
+                    </p>
+                    </li>
+                    <li>cd into your project</li>
+                    <li>It is here I would type code . into the terminal to open your project in VSCode if you haven't already. Once you've opened your project in VSCode, navigate to the terminal and cd .. up to your root directory, activate your venv (see step #3).</li>
+                    <li>Start the local web server:
+                    <p>
+                        python3 manage.py runserver (mac)
+                        <br>
+                        python manage.py runserver (windows)
+                    </p>
+                    You'll see that there are unapplied migrations, we'll get to that.
+                    </li>
+                    <p>** There is a caveat here that I have heard you want to make your User changes before you apply migrations and migrate or you'll have to go back and restart later, so if you plan on having a custom User model you might want to pause here and look into this.
+                    </p>
+                    <p>
+                    "It's highly recommended to set up a custom User model when starting a new Django project. Without it, you will need to create another model (like UserProfile) and link it to the Django User model with a OneToOneField if you want to add new fields to the User model." -- testdriven.io </p>
+                    <div>
+                    <a href="https://testdriven.io/blog/django-custom-user-model/">https://testdriven.io/blog/django-custom-user-model/</a>
+                    </div>
+                    <p>If this doesn't apply to you or you don't know what I'm talking about you probably don't need to worry about it at this point, in which case you can:</p>
+                    <li>Migrate :)
+                        <p>
+                            python3 manage.py migrate (mac)
+                            <br>
+                            python manage.py migrate (windows)
+                        </p>
+                    </li>
+                    <li>Check out http://localhost:8000/ to see that the install worked correctly :)
+                    </li>
+                    <li>Create a new repo on github, but don't initialize with anything and wait to do anything else because you likely don't want to publish your secret key.</li>
+                    <li>We have python decouple available to help us in not publishing our secret key. I'll walk you through the basic steps as I currently understand them but you can also read more here:
+                        <p>
+                            <a href="https://pypi.org/project/python-decouple/">https://pypi.org/project/python-decouple/</a>
+                        </p>
+                    </li>
+                    <li>
+                        **Important** Pause here to find a .gitignore for your django project. You can find the one I have been using here:
+                        <p>
+                            <a href="https://djangowaves.com/tips-tricks/gitignore-for-a-django-project/">https://djangowaves.com/tips-tricks/gitignore-for-a-django-project/</a>
+                        </p>
+                    </li>
+                    <li>At minimum, make sure your .gitignore ignores .env</li>
+                    <li>Back in VSCode:
+                        <p>
+                            Add the .gitignore at the same directory level as manage.py 
+                        </p>
+                    </li>
+                    <li>Create a .env file at the same directory level as your .gitignore and manage.py</li>
+                    <li>Cut your secret key from settings.py (in project directory) and paste it in your .env. It should look something like:
+                        <p>SECRET_KEY = 'lotsofrandomcharacters'</p>
+                    </li>
+                    <p>** For now I only have the macOS steps for this portion, sorry!**</p>
+                    <li>Where your secret key was in settings.py, replace that with
+                        <p>
+                            from decouple import config
+                            <br>
+                            SECRET_KEY = config(“SECRET_KEY”)
+                        </p>
+                    </li>
+                    <li>Then in your terminal run:
+                        <p>
+                            pip3 uninstall decouple 
+                            <br>
+                            pip3 install python-decouple
+                        </p>
+                    </li>
+                    <p>(there's at minimum a possible linting error in VSCode at the moment, I have heard there are fixes like it could be an interpreter issue, or you could try uninstalling decouple--not python-decouple--installing python-decouple outside of venv, restarting the terminal--if anyone experiences this and has a fix let me know)</p>
+                    <li>Next, in terminal:
+                        <p>pip3 freeze > requirements.txt</p>
+                        (I would google this further if you're curious, but basically it keeps track of your dependencies)
+                    </li>
+                    <li>In theory we're ready for github. (These steps are also the ones on github after you create an empty repo):</li>
+                    <li>git init</li>
+                    <li>git add .</li>
+                    <li>git commit -m "first commit"</li>
+                    <li>git branch -M main</li>
+                    <li>git remove add origin .. (paste your git remote origin address)</li>
+                    <li>git push -u origin main</li>
+                    <p>That's basically it. I'll try to refine, improve and update this as things come up. I'll also add interesting links as I find them to the bottom of this.</p>
+                    <li>From here you can even start your first app in django:
+                        <p>
+                            python3 manage.py startapp name_of_app
+                        </p>
+                    </li>
+                    <li>Go to settings/py in your project directory and add your app to the list of INSTALLED_APPS.</li>
                 </ol>
+                <p>Happy coding! :)</p>
             </section>
+
             <section>
-                <p>.   .   .</p>
                 <p>Contact.</p>>
                 </div>
             </section>
