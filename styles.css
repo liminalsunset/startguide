@@ -1,0 +1,20 @@
+* {
+    background-color: black;
+    /* font-family: 'Nunito', sans-serif;
+    font-family: 'Titillium Web', sans-serif; */
+    /* font-family: 'Nunito', sans-serif;
+    font-family: 'Raleway', sans-serif; */
+    font-family: 'Nunito', sans-serif;
+    font-family: 'PT Sans', sans-serif;
+    font-size: small;
+    margin: 30px;
+}
+
+p {
+    color: white;
+}
+
+li {
+    list-style-type: none;
+    color: white;
+}
