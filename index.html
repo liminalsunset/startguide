@@ -32,7 +32,6 @@
                     <li>Check your Python version (you need at least 3.8 to use Django 4):
                     </br>
                         <p>python3 --version (mac) <br>
-                           python --version (windows)</p>
                     </li>
 
                     <li>Make and/or cd into/navigate to a directory for the project</li>
@@ -61,6 +60,10 @@
                         <p>
                             python3 -m pip install Django
                         </p>
+                        you can be more specific:
+                        <p>
+                            python3 -m pip install Django==4.0
+                        </p>
                     </li>
 
                     <li>In terminal run:
@@ -70,7 +73,7 @@
                         to check install. This should display a list of Django commands in the terminal.
                     </li>
 
-                    <li>Keep track of all your packages:
+                    <li>Keep track of all your packages/dependencies:
                         <p>python3 -m pip freeze > requirements.txt</p></li>
 
                     <li>Start your Django project:
@@ -100,12 +103,12 @@
 
                     <li>Migrate :)
                         <p>
-                            python3 manage.py migrate (mac)
+                            python3 manage.py migrate
                     </li>
 
                     <li>Check out http://localhost:8000/ to see that the install worked correctly :)</li>
 
-                    <li>Create a new repo on github, but don't initialize with anything and wait to do anything else because you likely don't want to publish your secret key.</li>
+                    <li>Create a new repo on github, but don't initialize with anything and wait to do anything else because you likely don't want to publish your secret key and such.</li>
 
                     <li>Enter python decouple. I'll walk you through the basic steps as I currently understand them but you can also read more here:
                         <p>
@@ -133,27 +136,20 @@
                         <p>SECRET_KEY = 'lotsofrandomcharacters'</p>
                     </li>
 
-                    <li>Where your secret key was in settings.py, replace that with
+                    <li>Where your secret key was in settings.py, add to top:
                         <p>
                             from decouple import config
-                            <br>
-                            SECRET_KEY = config(“SECRET_KEY”)
-                        </p>
                     </li>
 
+                    <li>Replace SECRET_KEY with:                              
+                    <p>SECRET_KEY = config(“SECRET_KEY”)</p>
+                    </li>
 
                     <li>Then in your terminal run:
                         <p>
-                            pip3 uninstall decouple 
-                            <br>
                             pip3 install python-decouple
                         </p>
-                        (there's at minimum a possible linting error in VSCode at the moment, I have heard there are fixes like it could be an interpreter issue, or you could try uninstalling decouple--not python-decouple--installing python-decouple outside of venv, restarting the terminal--if anyone experiences this and has a fix let me know)
-                    </li>
-
-                    <li>Next, in terminal:
-                        <p>pip3 freeze > requirements.txt</p>
-                        (I would google this further if you're curious, but basically it keeps track of your dependencies)
+                        (There's at minimum a possible linting error in VSCode at the moment, I have heard there are fixes like it could be an interpreter issue, or you could try uninstalling decouple--not python-decouple--installing python-decouple outside of venv, restarting the terminal. If anyone experiences this and has a fix let me know)
                     </li>
 
                     <li>In theory we're ready for github. (These steps are also the ones on github after you create an empty repo):</li>
@@ -186,7 +182,7 @@
                 </section>
 
                 <p>Happy coding! :)</p>
-                
+
                 <a href="#">Back to top.</a>
                 <a href="https://github.com/liminalsunset">My Github</a>
                 <a href="mailto:dev.yoga@pm.me">Contact</a>
