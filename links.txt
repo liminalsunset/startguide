@@ -1,0 +1,30 @@
+
+
+Links
+
+Migrations!
+
+https://stackoverflow.com/questions/28035119/should-i-be-adding-the-django-migration-files-in-the-gitignore-file
+
+https://djangowaves.com/tips-tricks/gitignore-for-a-django-project/
+
+https://docs.djangoproject.com/en/2.2/topics/migrations/
+
+Python gitignore:
+
+https://djangowaves.com/tips-tricks/gitignore-for-a-python-project/
+
+Django REST api / django REST framework
+
+https://www.django-rest-framework.org/
+
+https://djangowaves.com/resources/django-rest-api/
+
+
+gitignore:
+
+https://www.toptal.com/developers/gitignore
+
+https://www.toptal.com/developers/gitignore/api/python,django
+
+// on step 3 you could use virtualenv env_name
