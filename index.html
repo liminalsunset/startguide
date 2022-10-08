@@ -132,18 +132,33 @@
 
                     <li>Create a .env file at the same directory level as your .gitignore and manage.py</li>
 
-                    <li>Cut your secret key from settings.py (in project directory) and paste it in your .env. It should look something like:
-                        <p>SECRET_KEY = 'lotsofrandomcharacters'</p>
-                    </li>
-
-                    <li>Where your secret key was in settings.py, add to top:
+                    <li>In settings.py, add to top:
                         <p>
                             from decouple import config
                     </li>
 
-                    <li>Replace SECRET_KEY with:                              
-                    <p>SECRET_KEY = config(“SECRET_KEY”)</p>
+                    <li>In your .env file include the following:
+                        <p>DEBUG=TRUE</p>
+                        <p>SECRET_KEY=</p>
+                        <p>DATABASE_URL=</p>
                     </li>
+                    <li>Cut your SECRET_KEY from settings.py (in project directory) and paste it in your .env. It should look something like:
+                        <p>SECRET_KEY = 'lotsofrandomcharacters'</p>
+                    </li>
+
+                    <li>Replace SECRET_KEY in settings.py with:                              
+                    <p>SECRET_KEY = config('SECRET_KEY')</p>
+                    </li>
+
+                    <li>Replace DEBUG in settings.py with:
+                        <p>
+                            DEBUG = config('DEBUG', default=False, cast=bool)
+                        </p>
+                    </li>
+
+                    <li>DATABASES placeholder.
+                    </li>
+
 
                     <li>Then in your terminal run:
                         <p>
