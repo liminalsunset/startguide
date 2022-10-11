@@ -73,9 +73,6 @@
                         to check install. This should display a list of Django commands in the terminal.
                     </li>
 
-                    <li>Keep track of all your packages/dependencies:
-                        <p>python3 -m pip freeze > requirements.txt</p></li>
-
                     <li>Start your Django project:
                     <p>
                        django-admin startproject project_name
@@ -84,11 +81,14 @@
 
                     <li>cd into your project</li>
 
+                    <li>Keep track of all your packages/dependencies:
+                        <p>python3 -m pip freeze > requirements.txt</p></li>
+
                     <li>It is here I would type code . into the terminal to open your project in VSCode if you haven't already. Once you've opened your project in VSCode, navigate to the terminal and cd .. up to your root directory, activate your venv (see step #3) and cd back into your project.</li>
 
                     <li>Start the local web server:
                     <p>
-                        python3 manage.py runserver (mac)
+                        python3 manage.py runserver
                     </p>
                     You'll see that there are unapplied migrations, we'll get to that.
                     <p>** There is a caveat here that I have heard you want to make your User changes before you apply migrations and migrate or you'll have to go back and restart later, so if you plan on having a custom User model you might want to pause here and look into this.
