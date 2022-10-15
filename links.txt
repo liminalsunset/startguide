@@ -28,3 +28,21 @@ https://www.toptal.com/developers/gitignore
 https://www.toptal.com/developers/gitignore/api/python,django
 
 // on step 3 you could use virtualenv env_name
+
+other .env options:
+
+https://github.com/jpadilla/django-dotenv
+https://github.com/joke2k/django-environ
+https://pypi.org/project/python-dotenv/
+
+things about committing your password to github and how not to:
+
+https://pybit.es/articles/how-to-handle-environment-variables-in-python/
+
+https://www.youtube.com/watch?v=2uaTPmNvH0I - Miguel Grinberg - Oops! I Committed My Password To GitHub! - PyCon 2018
+
+Books:
+
+FullStack Python Security
+
+
