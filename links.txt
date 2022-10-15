@@ -1,8 +1,8 @@
 
 
-Links
+Links/notes
 
-Migrations!
+Migrations:
 
 https://stackoverflow.com/questions/28035119/should-i-be-adding-the-django-migration-files-in-the-gitignore-file
 
@@ -27,7 +27,6 @@ https://www.toptal.com/developers/gitignore
 
 https://www.toptal.com/developers/gitignore/api/python,django
 
-// on step 3 you could use virtualenv env_name
 
 other .env options:
 
