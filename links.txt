@@ -11,8 +11,8 @@ https://djangowaves.com/tips-tricks/gitignore-for-a-django-project/
 https://docs.djangoproject.com/en/2.2/topics/migrations/
 
 Python gitignore:
-
 https://djangowaves.com/tips-tricks/gitignore-for-a-python-project/
+
 
 Django REST api / django REST framework
 
@@ -43,5 +43,6 @@ https://www.youtube.com/watch?v=2uaTPmNvH0I - Miguel Grinberg - Oops! I Committe
 Books:
 
 FullStack Python Security
+Secure Web Application Development: A Hands-On Guide with Python and Django
 
 
