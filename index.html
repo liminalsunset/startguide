@@ -54,7 +54,7 @@
                         <p>
                             python3 -m pip install Django
                         </p>
-                        you can be more specific:
+                       OR you can be more specific:
                         <p>
                             python3 -m pip install Django==4.0
                         </p>
@@ -84,7 +84,7 @@
                     <p>
                         python3 manage.py runserver
                     </p>
-                    You'll see that there are unapplied migrations, we'll get to that.
+                    <p>You'll see that there are unapplied migrations, we'll get to that.</p>
                     <p>** There is a caveat here that I have heard you want to make your User changes before you apply migrations and migrate or you'll have to go back and restart later, so if you plan on having a custom User model you might want to pause here and look into this.
                     </p>
                     <p>
@@ -95,12 +95,15 @@
                     <p>If this doesn't apply to you or you don't know what I'm talking about you probably don't need to worry about it at this point, in which case you can:</p>
                     </li>
 
+                    <li>Check out http://localhost:8000/ to see that the install worked correctly :)</li>
+
+                    <li>Quit the server with ctrl-c</li>
+
                     <li>Migrate :)
                         <p>
                             python3 manage.py migrate
+                        </p>
                     </li>
-
-                    <li>Check out http://localhost:8000/ to see that the install worked correctly :)</li>
 
                     <li>Create a new repo on github, but don't initialize with anything and wait to do anything else because you likely don't want to publish your secret key and such.</li>
 
@@ -150,7 +153,7 @@
                         <p>note: when you runserver it will still show as DEBUG=True</p>
                     </li>
 
-                    <li>DATABASES placeholder. I think we can ignore databases for now, the default isn't likely what one would use in production though I'll provide details at a later time.
+                    <li>DATABASES placeholder. More to come.
                     </li>
 
 
