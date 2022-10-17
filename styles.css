@@ -18,6 +18,10 @@ li {
     color: white;
 }
 
-h1 {
+h1, h2 {
     color: white
+}
+
+a {
+    color: #e889bf
 }
